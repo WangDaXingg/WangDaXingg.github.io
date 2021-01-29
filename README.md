@@ -1,2 +1,2 @@
-# star.github.com
+# star.github.io
 个人博客
