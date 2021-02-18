@@ -147,7 +147,7 @@ jekyll serve
 | ---------------------------------------------------- | ------------------------------------------------------------ |
 | `_config.yml`                                        | 保存[配置](https://link.jianshu.com/?t=http%3A%2F%2Fjekyllcn.com%2Fdocs%2Fconfiguration%2F)数据。很多配置选项都可以直接在命令行中进行设置，但是如果你把那些配置写在这儿，你就不用非要去记住那些命令了。 |
 | `_drafts`                                            | drafts（草稿）是未发布的文章。这些文件的格式中都没有 `title.MARKUP` 数据。学习如何 [使用草稿](https://link.jianshu.com/?t=http%3A%2F%2Fjekyllcn.com%2Fdocs%2Fdrafts%2F). |
-| `_includes`                                          | 你可以加载这些包含部分到你的布局或者文章中以方便重用。可以用这个标签 `{% include file.ext %}` 来把文件 `_includes/file.ext` 包含进来。 |
+| `_includes`                                          | 你可以加载这些包含部分到你的布局或者文章中以方便重用。可以用这个标签 `\{\% include file.ext \%\}` 来把文件 `\_includes/file.ext` 包含进来。 |
 | `_layouts`                                           | layouts（布局）是包裹在文章外部的模板。布局可以在 [YAML 头信息](https://link.jianshu.com/?t=http%3A%2F%2Fjekyllcn.com%2Fdocs%2Ffrontmatter%2F)中根据不同文章进行选择。 这将在下一个部分进行介绍。标签 `{{ content }}` 可以将content插入页面中。 |
 | `_posts`                                             | 这里放的就是你的文章了。文件格式很重要，必须要符合:`YEAR-MONTH-DAY-title.MARKUP`。 [永久链接](https://link.jianshu.com/?t=http%3A%2F%2Fjekyllcn.com%2Fdocs%2Fpermalinks%2F) 可以在文章中自己定制，但是数据和标记语言都是根据文件名来确定的。 |
 | `_data`                                              | 格式化好的网站数据应放在这里。jekyll 的引擎会自动加载在该目录下所有的 yaml 文件（后缀是 `.yml`, `.yaml`, `.json` 或者 `.csv` ）。这些文件可以经由 ｀site.data｀ 访问。如果有一个 `members.yml` 文件在该目录下，你就可以通过 `site.data.members` 获取该文件的内容。 |
@@ -286,7 +286,9 @@ tags:
 | `category`、`categories` | 除过将博客文章放在某个文件夹下面外，你还可以指定博客的一个或者多个分类属性。这样当你的站点生成后，这些文章就可以根据这些分类来阅读。`categories` 可以通过 [YAML list](https://link.jianshu.com/?t=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FYAML%23Lists)，或者以逗号隔开的字符串指定。 |
 | `tags`                   | 类似分类 `categories`，一篇文章也可以给它增加一个或者多个标签。同样，`tags` 可以通过 YAML 列表或者以逗号隔开的字符串指定。 |
 
-除了这些预定义的变量，也可以自定义变量，然后在布局文件中`{{ page.自定义变量 }}`来引用
+```
+除了这些预定义的变量，也可以自定义变量，然后在布局文件中 \{\{ page.自定义变量 \}\} 来引用 
+```
 
 **我第一次写博客头信息的时候遇到两个坑**：
 
